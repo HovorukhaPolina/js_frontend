@@ -1,0 +1,47 @@
+:root {
+  --bg: #222228;
+  --text-main: #b6b7bb;
+  --text-secondary: #8f8fa8;
+
+  font-family: Inter, system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: #222228;
+
+  color: var(--text-main);
+
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
