@@ -1,7 +1,13 @@
+export interface Category {
+    id: number;
+    name: string;
+}
+
 export type Post = {
-    id: number,
-    name: string,
-    price: number,
-    image: string,
-    category: string
-}   
+    id: number;
+    name: string;
+    content: string;
+    authorId: number;
+    categoryId: number;
+    category: Category;
+};

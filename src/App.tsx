@@ -1,19 +1,20 @@
 import "./App.css";
 import { Header } from "./components/Header";
 import { PostList } from "./components/PostList";
-import { posts } from "./data/posts";
+import { useGetPostsQuery } from "./api/baseApi";
 
 function App() {
-  return (
-    <main className="app">
-      <Header
-        title="Forum DEV"
-        description="Найкращий форум для програмування та сучасних технологій"
-      />
-
-      <PostList posts={posts} />
+  const{data: posts = [], isLoading, isError} = useGetPostsQuery()
+  return(
+    <main>
+      <Header title='post Catalog' description='НАШ ПЕРШИЙ REACT ПРОЕКТ + TYPE SCRIPT'/>
+      {isLoading && <p>Завантаження постів...</p>} 
+      {isError && <p>Не вдалося завантажити пости</p>}
+      {!isLoading && !isError && (posts.length > 0
+                                  ?<PostList posts={posts}/>
+                                  :<p>Постів не знайденно</p>)}
     </main>
-  );
+  )
 }
 
 
